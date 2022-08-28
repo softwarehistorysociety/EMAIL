@@ -1,0 +1,70 @@
+<html>
+<body>
+<a href="djb.html">D. J. Bernstein</a>
+<br><a href="mail.html">Internet mail</a>
+<h1>Internet mail message header format</h1>
+<a href="immhf/header.html">Headers</a><br>
+<a href="immhf/field.html">Field names and field values</a><br>
+<a href="immhf/token.html">Tokenizable field values</a><br>
+<a href="immhf/addrlist.html">Address lists</a>
+<p>
+<a href="immhf/recip.html">Recipients: To, Cc, Bcc</a>
+<br><a href="immhf/sender.html">Senders: From, Sender</a>
+<br><a href="immhf/response.html">Response targets: Reply-To, Mail-Reply-To, Mail-Followup-To</a>
+<br><a href="immhf/thread.html">Threading: Message-ID, References, In-Reply-To</a>
+<p>
+<a href="immhf/date.html">Date fields</a>
+<br><a href="immhf/resent.html">Resent-* fields</a>
+<br><a href="immhf/envelope.html">Envelope information: Return-Path, Received</a>
+<br><a href="immhf/misc.html">Miscellaneous: Subject, Comments, Keywords, Encrypted</a>
+<p>
+<a href="immhf/index.html">Field name index</a>
+<hr>
+These pages are designed to be a
+complete, correct, comprehensible reference
+for the format of an Internet mail message header.
+They explain
+<ol>
+<li>what shows up in today's Internet mail messages;
+<li>what today's mail-reading programs can handle; and
+<li>what the IETF header-format specifications say.
+</ol>
+There are several IETF header-format specifications:
+<ol>
+<li>RFC 822, published in 1982.
+This was the primary specification for many years.
+The header format is often called ``822 format.''
+However, most implementors don't know what 822 says.
+822 allows much more flexibility
+than a typical mail-reading program can actually handle;
+meanwhile it imposes restrictions that millions of users violate every day.
+<li>RFC 1123, published in 1989. A few corrections to 822.
+<li>RFC 2822, published in 2001, also known as 822bis.
+Replaced 822/1123.
+822bis is more misleading than 822 in some areas, less misleading in others.
+</ol>
+<h2>A warning about evolution</h2>
+It's easy to add syntax to a protocol.
+First upgrade all the readers to understand the syntax;
+then the writers can safely start using it.
+<p>
+For <i>most</i> protocols, it's just as easy to remove syntax.
+First upgrade all the writers to avoid the syntax;
+then the readers can safely stop supporting it.
+<p>
+Mail is different.
+A mail message lasts forever.
+Millions of people have saved billions of messages;
+and they expect every new MUA
+to be able to parse every one of those messages.
+Tomorrow's readers have to be compatible with yesterday's writers.
+<p>
+If you're a new implementor,
+you'll be shocked at how badly 822 was designed.
+Extracting even the simplest information from a message---the
+author's address, for example, or the sending date---is excruciatingly painful.
+And I see no sign that we'll ever be rid of the horrors of 822 syntax;
+how can we convince users to convert their old mailboxes to
+a sensible new format?
+</body>
+</html>
